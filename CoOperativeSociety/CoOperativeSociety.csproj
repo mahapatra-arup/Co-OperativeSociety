@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{924ABD99-2934-426F-84F1-3FB46D1FF34E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoOperativeSociety</RootNamespace>
+    <AssemblyName>CoOperativeSociety</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>C:\www\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3C704C4C80641D5F30453D1AF9729F557EFC3C3E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>true</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AdvancedDataGridView">
+      <HintPath>bin\Release\Reference\AdvancedDataGridView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="SocietyBusinessAccess">
+      <HintPath>..\SocietyBusinessAccess\bin\Release\SocietyBusinessAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="SocietyDataAccess">
+      <HintPath>..\SocietyDataAccess\bin\Release\SocietyDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.Ribbon35">
+      <HintPath>E:\A(New)\Think\C#\DESIGNing\Ribon\SourceCode\SourceCode\RibbonDemo\bin\Debug\System.Windows.Forms.Ribbon35.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Customer\AddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\AddCustomer.Designer.cs">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerWindow.Designer.cs">
+      <DependentUpon>CustomerWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\ViewList\CustomerFullReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\ViewList\CustomerFullReport.Designer.cs">
+      <DependentUpon>CustomerFullReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinancialYears\FinancialYearWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinancialYears\FinancialYearWindow.Designer.cs">
+      <DependentUpon>FinancialYearWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Help\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Help\AssemblyDetails.cs" />
+    <Compile Include="Setting\DefultPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting\DefultPage.Designer.cs">
+      <DependentUpon>DefultPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Help\frmHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help\frmHelp.Designer.cs">
+      <DependentUpon>frmHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeWindow.Designer.cs">
+      <DependentUpon>HomeWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeWindows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeWindows.Designer.cs">
+      <DependentUpon>HomeWindows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IncomeExpence\ExpenseEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IncomeExpence\ExpenseEntry.Designer.cs">
+      <DependentUpon>ExpenseEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IncomeExpence\IncomeEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IncomeExpence\IncomeEntry.Designer.cs">
+      <DependentUpon>IncomeEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\BankLedgeEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ledgers\BankLedgeEntry.Designer.cs">
+      <DependentUpon>BankLedgeEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ledgers\LedgerEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ledgers\LedgerEntry.Designer.cs">
+      <DependentUpon>LedgerEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Loans\CustomerLoanEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Loans\CustomerLoanEntry.Designer.cs">
+      <DependentUpon>CustomerLoanEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Others\LoanCalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Others\LoanCalculator.Designer.cs">
+      <DependentUpon>LoanCalculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Loans\LoanRePayment\CustomerLoanRePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Loans\LoanRePayment\CustomerLoanRePayment.Designer.cs">
+      <DependentUpon>CustomerLoanRePayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Others\LoanTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Others\LoanTypes.Designer.cs">
+      <DependentUpon>LoanTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\DecimalPointSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting\DecimalPointSetting.Designer.cs">
+      <DependentUpon>DecimalPointSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Society\ListView\SocityLoanEMIView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Society\ListView\SocityLoanEMIView.Designer.cs">
+      <DependentUpon>SocityLoanEMIView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Society\ListView\SocityLoanStatement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Society\ListView\SocityLoanStatement.Designer.cs">
+      <DependentUpon>SocityLoanStatement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Society\Loans\SocietyLoanEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Society\Loans\SocietyLoanEntry.Designer.cs">
+      <DependentUpon>SocietyLoanEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Society\Loans\SocityLoanRePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Society\Loans\SocityLoanRePayment.Designer.cs">
+      <DependentUpon>SocityLoanRePayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Society\SocityDetailsEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Society\SocityDetailsEntry.Designer.cs">
+      <DependentUpon>SocityDetailsEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ProjectTools\BankTools.cs" />
+    <Compile Include="Tools\ProjectTools\CustomerUtils.cs" />
+    <Compile Include="Tools\Design\ComboBox\BNComboBox\IComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tools\Design\ComboBox\BNComboBox\IRadius.cs" />
+    <Compile Include="Tools\Design\Component\RoundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tools\Design\ControlDesign.cs" />
+    <Compile Include="Tools\ProjectTools\DefultClass.cs" />
+    <Compile Include="Tools\ProjectTools\SubAccountUtils.cs" />
+    <Compile Include="Tools\sysTools\DataGriedView.cs" />
+    <Compile Include="Tools\sysTools\sysTools.cs" />
+    <Compile Include="Tools\Design\DrageMoveProvider\DragMoveExtensions.cs" />
+    <Compile Include="Tools\Design\DrageMoveProvider\DragMoveProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tools\Design\DrageMoveProvider\DragMoveProvider.designer.cs">
+      <DependentUpon>DragMoveProvider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Design\Gradient Design\GradientButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tools\Design\Gradient Design\GradientPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tools\Design\Gradient Design\GradientPanel.designer.cs">
+      <DependentUpon>GradientPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ProjectTools\LedgerUtils.cs" />
+    <Compile Include="Tools\Design\MultipleSlidingPAnel.cs" />
+    <Compile Include="Tools\Design\SPControls\ControlMoverOrResizer.cs" />
+    <Compile Include="Tools\Design\SPControls\MsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Design\SPControls\PleaseWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Design\SPControls\PleaseWait.Designer.cs">
+      <DependentUpon>PleaseWait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Design\User_Control\DragingPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\Design\User_Control\DragingPanel.Designer.cs">
+      <DependentUpon>DragingPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ProjectTools\DistAndStateUtils.cs" />
+    <Compile Include="Tools\sysTools\EventUtils.cs" />
+    <Compile Include="Tools\sysTools\FormUtils.cs" />
+    <Compile Include="Tools\sysTools\Imager.cs" />
+    <Compile Include="Tools\ProjectTools\LoanTypesUtils.cs" />
+    <Compile Include="Tools\Loger\LogDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Loger\LogDisplay.Designer.cs">
+      <DependentUpon>LogDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ProjectTools\SocityLoanUtils.cs" />
+    <Compile Include="Tools\ProjectTools\SocityUtils.cs" />
+    <Compile Include="Tools\sysTools\ValidationUtils.cs" />
+    <Compile Include="Customer\ViewList\CustomerEMIView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\ViewList\CustomerEMIView.Designer.cs">
+      <DependentUpon>CustomerEMIView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IncomeExpence\IncomeExpenceListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IncomeExpence\IncomeExpenceListView.Designer.cs">
+      <DependentUpon>IncomeExpenceListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\ViewList\CustomerLoanStatement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\ViewList\CustomerLoanStatement.Designer.cs">
+      <DependentUpon>CustomerLoanStatement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\ViewList\ShareDepositListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\ViewList\ShareDepositListView.Designer.cs">
+      <DependentUpon>ShareDepositListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Transection\LedgerHeadDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Transection\LedgerHeadDetails.Designer.cs">
+      <DependentUpon>LedgerHeadDetails.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Customer\AddCustomer.resx">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerWindow.resx">
+      <DependentUpon>CustomerWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinancialYears\FinancialYearWindow.resx">
+      <DependentUpon>FinancialYearWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\DefultPage.resx">
+      <DependentUpon>DefultPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help\frmHelp.resx">
+      <DependentUpon>frmHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeWindow.resx">
+      <DependentUpon>HomeWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeWindows.resx">
+      <DependentUpon>HomeWindows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IncomeExpence\ExpenseEntry.resx">
+      <DependentUpon>ExpenseEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IncomeExpence\IncomeEntry.resx">
+      <DependentUpon>IncomeEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ledgers\BankLedgeEntry.resx">
+      <DependentUpon>BankLedgeEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ledgers\LedgerEntry.resx">
+      <DependentUpon>LedgerEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Loans\CustomerLoanEntry.resx">
+      <DependentUpon>CustomerLoanEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Others\LoanCalculator.resx">
+      <DependentUpon>LoanCalculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Loans\LoanRePayment\CustomerLoanRePayment.resx">
+      <DependentUpon>CustomerLoanRePayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Others\LoanTypes.resx">
+      <DependentUpon>LoanTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\DecimalPointSetting.resx">
+      <DependentUpon>DecimalPointSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Society\ListView\SocityLoanEMIView.resx">
+      <DependentUpon>SocityLoanEMIView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Society\ListView\SocityLoanStatement.resx">
+      <DependentUpon>SocityLoanStatement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Society\Loans\SocietyLoanEntry.resx">
+      <DependentUpon>SocietyLoanEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Society\Loans\SocityLoanRePayment.resx">
+      <DependentUpon>SocityLoanRePayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Society\SocityDetailsEntry.resx">
+      <DependentUpon>SocityDetailsEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Design\Gradient Design\GradientButton.resx">
+      <DependentUpon>GradientButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Design\Gradient Design\GradientPanel.resx">
+      <DependentUpon>GradientPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Design\SPControls\MsgBox.resx">
+      <DependentUpon>MsgBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Design\SPControls\PleaseWait.resx">
+      <DependentUpon>PleaseWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Design\User_Control\DragingPanel.resx">
+      <DependentUpon>DragingPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Loger\LogDisplay.resx">
+      <DependentUpon>LogDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\ViewList\CustomerEMIView.resx">
+      <DependentUpon>CustomerEMIView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IncomeExpence\IncomeExpenceListView.resx">
+      <DependentUpon>IncomeExpenceListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\ViewList\CustomerLoanStatement.resx">
+      <DependentUpon>CustomerLoanStatement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\ViewList\ShareDepositListView.resx">
+      <DependentUpon>ShareDepositListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Transection\LedgerHeadDetails.resx">
+      <DependentUpon>LedgerHeadDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Default Session.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessEntities\BusinessEntities.csproj">
+      <Project>{57A8F993-C7F8-4C3A-B036-B06385D1F5D3}</Project>
+      <Name>BusinessEntities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel16X16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button-dark-plus-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print All.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ResetSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatisticBig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Student Admission.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Student Alter.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculator-18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Structure.png" />
+    <None Include="Resources\Bank Account.png" />
+    <None Include="Resources\Bank.png" />
+    <None Include="Resources\Export excel.png" />
+    <None Include="Resources\Loan Receipt.png" />
+    <None Include="Resources\information32X32.png" />
+    <Content Include="FodyWeavers.xml" />
+    <None Include="Resources\Default.png" />
+    <None Include="Resources\DefaultSmall.png" />
+    <None Include="Resources\Delete.png" />
+    <None Include="Resources\Setti9ngsBD.png" />
+    <None Include="Resources\tool.png" />
+    <None Include="Resources\1423668809_Home.png" />
+    <Content Include="icon.ico" />
+    <Content Include="Tools\Design\DrageMoveProvider\WinFormsDragMove.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Fody.3.1.4\build\Fody.targets" Condition="Exists('..\packages\Fody.3.1.4\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Fody.3.1.4\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.3.1.4\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.3.1.0\build\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.3.1.0\build\Costura.Fody.targets'))" />
+  </Target>
+  <Import Project="..\packages\Costura.Fody.3.1.0\build\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.3.1.0\build\Costura.Fody.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

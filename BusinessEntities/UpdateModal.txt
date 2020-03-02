@@ -1,0 +1,1 @@
+﻿Click on modal -> then you will show a database diagram-> and next right click on diagram view and select [Update modal from database];

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f7152ef91dba4bceb28bca499cb96497" Name="Diagram1">
+        <EntityTypeShape EntityType="CoOperativeModel.Bank" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.CustomerAddressDetail" Width="1.5" PointX="5.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.CustomerBankDetail" Width="1.5" PointX="8.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.CustomerDetail" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.CustomerLoanDetail" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.CustomerLoanEMI" Width="1.5" PointX="7.5" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.District" Width="1.5" PointX="10" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.FinancialYear" Width="1.5" PointX="0.75" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.LedgerBankDetail" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.Ledger" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.LedgersStatu" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.LedgerSubAccount" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.LoanSubType" Width="1.5" PointX="12" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.LoanType" Width="1.5" PointX="9.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.ROIofBank" Width="1.5" PointX="10.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.SocietyDetail" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.SocietyLoanDetail" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.SocietyLoanEMI" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.State" Width="1.5" PointX="7.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.Transection" Width="1.5" PointX="10.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.CustomerList" Width="1.5" PointX="12.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoOperativeModel.TransectionView" Width="1.5" PointX="14.75" PointY="2.75" IsExpanded="true" />
+        <AssociationConnector Association="CoOperativeModel.FK_CustomerBankDetails_Bank" ManuallyRouted="false" />
+        <AssociationConnector Association="CoOperativeModel.FK_LedgerBankDetails_Bank" ManuallyRouted="false" />
+        <AssociationConnector Association="CoOperativeModel.FK_CustomerPersonalDetails_CustomerDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="CoOperativeModel.FK_CustomerBankDetails_CustomerDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="CoOperativeModel.FK_CustomerDetails_LedgerMain" ManuallyRouted="false" />
+        <AssociationConnector Association="CoOperativeModel.FK_CustomerLoanDetails_CustomerDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="CoOperativeModel.FK_CustomerLoanDetails_SocietyLoanDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="CoOperativeModel.FK_CustomerLoanEMI_CustomerLoanDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="CoOperativeModel.FK_Districts_State" ManuallyRouted="false" />
+        <AssociationConnector Association="CoOperativeModel.FK_LedgerStatus_FinancialYear" ManuallyRouted="false" />
+        <AssociationConnector Association="CoOperativeModel.FK_LedgerBankDetails_Ledgers" ManuallyRouted="false" />
+        <AssociationConnector Association="CoOperativeModel.FK_LedgerStatus_Ledgers" ManuallyRouted="false" />
+        <AssociationConnector Association="CoOperativeModel.FK_LoanSubType_LoanType" ManuallyRouted="false" />
+        <AssociationConnector Association="CoOperativeModel.FK_SocietyLoanEMI_SocietyLoanEMI" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CoOperativeModel.DecimalPointTool" Width="1.5" PointX="15.375" PointY="8.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

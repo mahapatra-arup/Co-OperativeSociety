@@ -1,0 +1,8 @@
+
+=============================Fin Year==============================
+1>. BankLedgerEntry.cs ->FillFromValues()->set <FinYearID> (1 time)
+
+2.>LedgerEntry->FillFromValues()->set <FinYearID> (1 time)
+
+=================================SocietyLoanDetails===================
+1>. [LedgerTo] and [LedgerFrom] Uses on :CoOperativeSociety-> [LedgerUtils] Class

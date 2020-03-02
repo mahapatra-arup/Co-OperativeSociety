@@ -1,0 +1,674 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CoOperativeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bank">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BankName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CustomerBankDetails" Relationship="Self.FK_CustomerBankDetails_Bank" FromRole="Bank" ToRole="CustomerBankDetails" />
+    <NavigationProperty Name="LedgerBankDetails" Relationship="Self.FK_LedgerBankDetails_Bank" FromRole="Bank" ToRole="LedgerBankDetails" />
+  </EntityType>
+  <EntityType Name="CustomerAddressDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Guid" Nullable="false" />
+    <Property Name="PrVill" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PrPS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PrPIN" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="prDist" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pmVill" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pmPS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pmPIN" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pmDist" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mNo" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lNo" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="emailID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CustomerDetail" Relationship="Self.FK_CustomerPersonalDetails_CustomerDetails" FromRole="CustomerAddressDetails" ToRole="CustomerDetails" />
+  </EntityType>
+  <EntityType Name="CustomerBankDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Guid" Nullable="false" />
+    <Property Name="BankID" Type="Int32" Nullable="false" />
+    <Property Name="BranchName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BankIFC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MICRCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AccountNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Bank" Relationship="Self.FK_CustomerBankDetails_Bank" FromRole="CustomerBankDetails" ToRole="Bank" />
+    <NavigationProperty Name="CustomerDetail" Relationship="Self.FK_CustomerBankDetails_CustomerDetails" FromRole="CustomerBankDetails" ToRole="CustomerDetails" />
+  </EntityType>
+  <EntityType Name="CustomerDetail">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="Guid" Nullable="false" />
+    <Property Name="Customername" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PanNo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AadhaarNo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="LedgerId" Type="Guid" />
+    <NavigationProperty Name="CustomerAddressDetails" Relationship="Self.FK_CustomerPersonalDetails_CustomerDetails" FromRole="CustomerDetails" ToRole="CustomerAddressDetails" />
+    <NavigationProperty Name="CustomerBankDetails" Relationship="Self.FK_CustomerBankDetails_CustomerDetails" FromRole="CustomerDetails" ToRole="CustomerBankDetails" />
+    <NavigationProperty Name="Ledger" Relationship="Self.FK_CustomerDetails_LedgerMain" FromRole="CustomerDetails" ToRole="Ledgers" />
+    <NavigationProperty Name="CustomerLoanDetails" Relationship="Self.FK_CustomerLoanDetails_CustomerDetails" FromRole="CustomerDetails" ToRole="CustomerLoanDetails" />
+  </EntityType>
+  <EntityType Name="CustomerLoanDetail">
+    <Key>
+      <PropertyRef Name="LoanId" />
+    </Key>
+    <Property Name="LoanId" Type="Guid" Nullable="false" />
+    <Property Name="SocietyLoanSlNo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CustomerId" Type="Guid" Nullable="false" />
+    <Property Name="SanctionedAmount" Type="Double" Nullable="false" />
+    <Property Name="RateOfInterest" Type="Double" Nullable="false" />
+    <Property Name="EMIPrincipalAmount" Type="Double" Nullable="false" />
+    <Property Name="EMIInterestAmount" Type="Double" Nullable="false" />
+    <Property Name="ShareAmount" Type="Double" />
+    <Property Name="ROIShare" Type="Double" />
+    <Property Name="InsuranceAmount" Type="Double" />
+    <Property Name="PaidInsuranceFromSociety" Type="Double" />
+    <Property Name="PayableAmount" Type="Double" />
+    <Property Name="NoOfEMI" Type="Int64" Nullable="false" />
+    <Property Name="LoanTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LoanSubTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMIPeriodFormate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMIPeriod" Type="Int32" />
+    <Property Name="EMIPaidDay" Type="Int32" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsCompoundInterest" Type="Boolean" />
+    <Property Name="Transection_Ref_No" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CustomerDetail" Relationship="Self.FK_CustomerLoanDetails_CustomerDetails" FromRole="CustomerLoanDetails" ToRole="CustomerDetails" />
+    <NavigationProperty Name="SocietyLoanDetail" Relationship="Self.FK_CustomerLoanDetails_SocietyLoanDetails" FromRole="CustomerLoanDetails" ToRole="SocietyLoanDetails" />
+    <NavigationProperty Name="CustomerLoanEMIs" Relationship="Self.FK_CustomerLoanEMI_CustomerLoanDetails" FromRole="CustomerLoanDetails" ToRole="CustomerLoanEMI" />
+  </EntityType>
+  <EntityType Name="CustomerLoanEMI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LoanId" Type="Guid" Nullable="false" />
+    <Property Name="NoOfEMI" Type="Int64" Nullable="false" />
+    <Property Name="EMIDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PrincipalAmount" Type="Double" Nullable="false" />
+    <Property Name="InterestAmount" Type="Double" Nullable="false" />
+    <Property Name="IsPaid" Type="Boolean" />
+    <Property Name="VoucherNo" Type="Int64" />
+    <Property Name="PaidDate" Type="DateTime" Precision="3" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Transection_Ref_No" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CustomerLoanDetail" Relationship="Self.FK_CustomerLoanEMI_CustomerLoanDetails" FromRole="CustomerLoanEMI" ToRole="CustomerLoanDetails" />
+  </EntityType>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DistName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StateID" Type="Int32" />
+    <NavigationProperty Name="State" Relationship="Self.FK_Districts_State" FromRole="Districts" ToRole="State" />
+  </EntityType>
+  <EntityType Name="FinancialYear">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FinancialYearName" Type="String" MaxLength="90" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StartingDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndingDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsCurentyear" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="LedgersStatus" Relationship="Self.FK_LedgerStatus_FinancialYear" FromRole="FinancialYear" ToRole="LedgersStatus" />
+  </EntityType>
+  <EntityType Name="LedgerBankDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LedgerID" Type="Guid" Nullable="false" />
+    <Property Name="BankID" Type="Int32" Nullable="false" />
+    <Property Name="ACNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IFSC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MICR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BranchName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ACType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Bank" Relationship="Self.FK_LedgerBankDetails_Bank" FromRole="LedgerBankDetails" ToRole="Bank" />
+    <NavigationProperty Name="Ledger" Relationship="Self.FK_LedgerBankDetails_Ledgers" FromRole="LedgerBankDetails" ToRole="Ledgers" />
+  </EntityType>
+  <EntityType Name="Ledger">
+    <Key>
+      <PropertyRef Name="LedgerId" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LedgerId" Type="Guid" Nullable="false" />
+    <Property Name="LedgerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TemplateName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ParentLedgerId" Type="Guid" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsFixed" Type="Boolean" />
+    <NavigationProperty Name="CustomerDetails" Relationship="Self.FK_CustomerDetails_LedgerMain" FromRole="Ledgers" ToRole="CustomerDetails" />
+    <NavigationProperty Name="LedgerBankDetails" Relationship="Self.FK_LedgerBankDetails_Ledgers" FromRole="Ledgers" ToRole="LedgerBankDetails" />
+    <NavigationProperty Name="LedgersStatus" Relationship="Self.FK_LedgerStatus_Ledgers" FromRole="Ledgers" ToRole="LedgersStatus" />
+  </EntityType>
+  <EntityType Name="LedgersStatu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LedgerID" Type="Guid" Nullable="false" />
+    <Property Name="FinYearID" Type="Int64" Nullable="false" />
+    <Property Name="OpeningBalance" Type="Double" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="FinancialYear" Relationship="Self.FK_LedgerStatus_FinancialYear" FromRole="LedgersStatus" ToRole="FinancialYear" />
+    <NavigationProperty Name="Ledger" Relationship="Self.FK_LedgerStatus_Ledgers" FromRole="LedgersStatus" ToRole="Ledgers" />
+  </EntityType>
+  <EntityType Name="LedgerSubAccount">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ParentAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nature" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsFixed" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="LoanSubType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LoanTypeId" Type="Int64" />
+    <Property Name="MaxLoanAmount" Type="Double" />
+    <Property Name="MinLoanAmount" Type="Double" />
+    <Property Name="EMIPeriodFormate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMIPeriod" Type="Int32" />
+    <Property Name="IsCompoundInterest" Type="Boolean" />
+    <NavigationProperty Name="LoanType" Relationship="Self.FK_LoanSubType_LoanType" FromRole="LoanSubType" ToRole="LoanType" />
+  </EntityType>
+  <EntityType Name="LoanType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LoanTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="LoanSubTypes" Relationship="Self.FK_LoanSubType_LoanType" FromRole="LoanType" ToRole="LoanSubType" />
+  </EntityType>
+  <EntityType Name="ROIofBank">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" />
+    <Property Name="RateOfLoan" Type="Int64" />
+    <Property Name="RateOfShareDeposit" Type="Int64" />
+  </EntityType>
+  <EntityType Name="SocietyDetail">
+    <Key>
+      <PropertyRef Name="SocietyName" />
+    </Key>
+    <Property Name="SocietyName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="At" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Block" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubDivission" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DIST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PIN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ESTD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ph" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="GP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CentreCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Area" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DistrictCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RegistrationNo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="GSTNo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PanNo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SocietyLoanDetail">
+    <Key>
+      <PropertyRef Name="SocietyLoanSlNo" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SocietyLoanSlNo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SanctionedAmount" Type="Double" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RateOfInterest" Type="Double" Nullable="false" />
+    <Property Name="EMIPrincipalAmount" Type="Double" Nullable="false" />
+    <Property Name="EMIInterestAmount" Type="Double" Nullable="false" />
+    <Property Name="PayableAmount" Type="Double" Nullable="false" />
+    <Property Name="NoOfEMI" Type="Int64" Nullable="false" />
+    <Property Name="LoanTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LoanSubTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMIPeriodFormate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMIPeriod" Type="Int32" Nullable="false" />
+    <Property Name="EMIPaidDay" Type="Int32" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsCompoundInterest" Type="Boolean" />
+    <Property Name="LedgerFrom" Type="Guid" Nullable="false" />
+    <Property Name="LedgerTo" Type="Guid" Nullable="false" />
+    <Property Name="Transection_Ref_No" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CustomerLoanDetails" Relationship="Self.FK_CustomerLoanDetails_SocietyLoanDetails" FromRole="SocietyLoanDetails" ToRole="CustomerLoanDetails" />
+    <NavigationProperty Name="SocietyLoanEMIs" Relationship="Self.FK_SocietyLoanEMI_SocietyLoanEMI" FromRole="SocietyLoanDetails" ToRole="SocietyLoanEMI" />
+  </EntityType>
+  <EntityType Name="SocietyLoanEMI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SocietyLoanSlNo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NoOfEMI" Type="Int64" Nullable="false" />
+    <Property Name="EMIDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PrincipalAmount" Type="Double" Nullable="false" />
+    <Property Name="InterestAmount" Type="Double" Nullable="false" />
+    <Property Name="IsPaid" Type="Boolean" />
+    <Property Name="VoucherNo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="PaidDate" Type="DateTime" Precision="3" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Transection_Ref_No" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SocietyLoanDetail" Relationship="Self.FK_SocietyLoanEMI_SocietyLoanEMI" FromRole="SocietyLoanEMI" ToRole="SocietyLoanDetails" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="State1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Districts" Relationship="Self.FK_Districts_State" FromRole="State" ToRole="Districts" />
+  </EntityType>
+  <EntityType Name="Transection">
+    <Key>
+      <PropertyRef Name="TransectionID" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TransectionID" Type="Guid" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="No" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TransectionType" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LedgerIdFrom" Type="Guid" Nullable="false" />
+    <Property Name="LedgerIdTo" Type="Guid" Nullable="false" />
+    <Property Name="Amount_Dr" Type="Double" />
+    <Property Name="Amount_Cr" Type="Double" />
+    <Property Name="Mode" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="BankName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ChequeNo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ChequeDate" Type="DateTime" Precision="0" />
+    <Property Name="Narration" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Transection_Ref_No" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CustomerList">
+    <Key>
+      <PropertyRef Name="BankID" />
+      <PropertyRef Name="BranchName" />
+      <PropertyRef Name="BankIFC" />
+      <PropertyRef Name="MICRCode" />
+      <PropertyRef Name="AccountNo" />
+      <PropertyRef Name="BranchCode" />
+      <PropertyRef Name="PrVill" />
+      <PropertyRef Name="PrPS" />
+      <PropertyRef Name="PrPIN" />
+      <PropertyRef Name="prDist" />
+      <PropertyRef Name="pmVill" />
+      <PropertyRef Name="pmPS" />
+      <PropertyRef Name="pmPIN" />
+      <PropertyRef Name="pmDist" />
+      <PropertyRef Name="mNo" />
+      <PropertyRef Name="lNo" />
+      <PropertyRef Name="emailID" />
+      <PropertyRef Name="BankName" />
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="Customername" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PanNo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AadhaarNo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="LedgerId" Type="Guid" />
+    <Property Name="BankID" Type="Int32" Nullable="false" />
+    <Property Name="BranchName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BankIFC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MICRCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AccountNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PrVill" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PrPS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PrPIN" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="prDist" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pmVill" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pmPS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pmPIN" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pmDist" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mNo" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lNo" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="emailID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BankName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerId" Type="Guid" Nullable="false" />
+    <Property Name="LedgerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TransectionView">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="TransectionID" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="TransectionType" />
+      <PropertyRef Name="LedgerIdFrom" />
+      <PropertyRef Name="LedgerIdTo" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="TransectionID" Type="Guid" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="No" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TransectionType" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Amount_Dr" Type="Double" />
+    <Property Name="Amount_Cr" Type="Double" />
+    <Property Name="Mode" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="BankName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ChequeNo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ChequeDate" Type="DateTime" Precision="0" />
+    <Property Name="Narration" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Transection_Ref_No" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="LedgerIdFrom" Type="Guid" Nullable="false" />
+    <Property Name="LedgerName_From" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LedgerIdTo" Type="Guid" Nullable="false" />
+    <Property Name="LedgerName_To" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_CustomerBankDetails_Bank">
+    <End Role="Bank" Type="Self.Bank" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CustomerBankDetails" Type="Self.CustomerBankDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bank">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerBankDetails">
+        <PropertyRef Name="BankID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LedgerBankDetails_Bank">
+    <End Role="Bank" Type="Self.Bank" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LedgerBankDetails" Type="Self.LedgerBankDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bank">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LedgerBankDetails">
+        <PropertyRef Name="BankID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerPersonalDetails_CustomerDetails">
+    <End Role="CustomerDetails" Type="Self.CustomerDetail" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CustomerAddressDetails" Type="Self.CustomerAddressDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerDetails">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="CustomerAddressDetails">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerBankDetails_CustomerDetails">
+    <End Role="CustomerDetails" Type="Self.CustomerDetail" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CustomerBankDetails" Type="Self.CustomerBankDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerDetails">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="CustomerBankDetails">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerDetails_LedgerMain">
+    <End Role="Ledgers" Type="Self.Ledger" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CustomerDetails" Type="Self.CustomerDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ledgers">
+        <PropertyRef Name="LedgerId" />
+      </Principal>
+      <Dependent Role="CustomerDetails">
+        <PropertyRef Name="LedgerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerLoanDetails_CustomerDetails">
+    <End Role="CustomerDetails" Type="Self.CustomerDetail" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CustomerLoanDetails" Type="Self.CustomerLoanDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerDetails">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="CustomerLoanDetails">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerLoanDetails_SocietyLoanDetails">
+    <End Role="SocietyLoanDetails" Type="Self.SocietyLoanDetail" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CustomerLoanDetails" Type="Self.CustomerLoanDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SocietyLoanDetails">
+        <PropertyRef Name="SocietyLoanSlNo" />
+      </Principal>
+      <Dependent Role="CustomerLoanDetails">
+        <PropertyRef Name="SocietyLoanSlNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerLoanEMI_CustomerLoanDetails">
+    <End Role="CustomerLoanDetails" Type="Self.CustomerLoanDetail" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CustomerLoanEMI" Type="Self.CustomerLoanEMI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerLoanDetails">
+        <PropertyRef Name="LoanId" />
+      </Principal>
+      <Dependent Role="CustomerLoanEMI">
+        <PropertyRef Name="LoanId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Districts_State">
+    <End Role="State" Type="Self.State" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Districts" Type="Self.District" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Districts">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LedgerStatus_FinancialYear">
+    <End Role="FinancialYear" Type="Self.FinancialYear" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LedgersStatus" Type="Self.LedgersStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FinancialYear">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LedgersStatus">
+        <PropertyRef Name="FinYearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LedgerBankDetails_Ledgers">
+    <End Role="Ledgers" Type="Self.Ledger" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LedgerBankDetails" Type="Self.LedgerBankDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ledgers">
+        <PropertyRef Name="LedgerId" />
+      </Principal>
+      <Dependent Role="LedgerBankDetails">
+        <PropertyRef Name="LedgerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LedgerStatus_Ledgers">
+    <End Role="Ledgers" Type="Self.Ledger" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LedgersStatus" Type="Self.LedgersStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ledgers">
+        <PropertyRef Name="LedgerId" />
+      </Principal>
+      <Dependent Role="LedgersStatus">
+        <PropertyRef Name="LedgerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoanSubType_LoanType">
+    <End Role="LoanType" Type="Self.LoanType" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LoanSubType" Type="Self.LoanSubType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoanType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LoanSubType">
+        <PropertyRef Name="LoanTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SocietyLoanEMI_SocietyLoanEMI">
+    <End Role="SocietyLoanDetails" Type="Self.SocietyLoanDetail" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SocietyLoanEMI" Type="Self.SocietyLoanEMI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SocietyLoanDetails">
+        <PropertyRef Name="SocietyLoanSlNo" />
+      </Principal>
+      <Dependent Role="SocietyLoanEMI">
+        <PropertyRef Name="SocietyLoanSlNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CoOperativeEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Banks" EntityType="Self.Bank" />
+    <EntitySet Name="CustomerAddressDetails" EntityType="Self.CustomerAddressDetail" />
+    <EntitySet Name="CustomerBankDetails" EntityType="Self.CustomerBankDetail" />
+    <EntitySet Name="CustomerDetails" EntityType="Self.CustomerDetail" />
+    <EntitySet Name="CustomerLoanDetails" EntityType="Self.CustomerLoanDetail" />
+    <EntitySet Name="CustomerLoanEMIs" EntityType="Self.CustomerLoanEMI" />
+    <EntitySet Name="Districts" EntityType="Self.District" />
+    <EntitySet Name="FinancialYears" EntityType="Self.FinancialYear" />
+    <EntitySet Name="LedgerBankDetails" EntityType="Self.LedgerBankDetail" />
+    <EntitySet Name="Ledgers" EntityType="Self.Ledger" />
+    <EntitySet Name="LedgersStatus" EntityType="Self.LedgersStatu" />
+    <EntitySet Name="LedgerSubAccounts" EntityType="Self.LedgerSubAccount" />
+    <EntitySet Name="LoanSubTypes" EntityType="Self.LoanSubType" />
+    <EntitySet Name="LoanTypes" EntityType="Self.LoanType" />
+    <EntitySet Name="ROIofBanks" EntityType="Self.ROIofBank" />
+    <EntitySet Name="SocietyDetails" EntityType="Self.SocietyDetail" />
+    <EntitySet Name="SocietyLoanDetails" EntityType="Self.SocietyLoanDetail" />
+    <EntitySet Name="SocietyLoanEMIs" EntityType="Self.SocietyLoanEMI" />
+    <EntitySet Name="States" EntityType="Self.State" />
+    <EntitySet Name="Transections" EntityType="Self.Transection" />
+    <EntitySet Name="CustomerLists" EntityType="Self.CustomerList" />
+    <EntitySet Name="TransectionViews" EntityType="Self.TransectionView" />
+    <AssociationSet Name="FK_CustomerBankDetails_Bank" Association="Self.FK_CustomerBankDetails_Bank">
+      <End Role="Bank" EntitySet="Banks" />
+      <End Role="CustomerBankDetails" EntitySet="CustomerBankDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LedgerBankDetails_Bank" Association="Self.FK_LedgerBankDetails_Bank">
+      <End Role="Bank" EntitySet="Banks" />
+      <End Role="LedgerBankDetails" EntitySet="LedgerBankDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerPersonalDetails_CustomerDetails" Association="Self.FK_CustomerPersonalDetails_CustomerDetails">
+      <End Role="CustomerDetails" EntitySet="CustomerDetails" />
+      <End Role="CustomerAddressDetails" EntitySet="CustomerAddressDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerBankDetails_CustomerDetails" Association="Self.FK_CustomerBankDetails_CustomerDetails">
+      <End Role="CustomerDetails" EntitySet="CustomerDetails" />
+      <End Role="CustomerBankDetails" EntitySet="CustomerBankDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerDetails_LedgerMain" Association="Self.FK_CustomerDetails_LedgerMain">
+      <End Role="Ledgers" EntitySet="Ledgers" />
+      <End Role="CustomerDetails" EntitySet="CustomerDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerLoanDetails_CustomerDetails" Association="Self.FK_CustomerLoanDetails_CustomerDetails">
+      <End Role="CustomerDetails" EntitySet="CustomerDetails" />
+      <End Role="CustomerLoanDetails" EntitySet="CustomerLoanDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerLoanDetails_SocietyLoanDetails" Association="Self.FK_CustomerLoanDetails_SocietyLoanDetails">
+      <End Role="SocietyLoanDetails" EntitySet="SocietyLoanDetails" />
+      <End Role="CustomerLoanDetails" EntitySet="CustomerLoanDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerLoanEMI_CustomerLoanDetails" Association="Self.FK_CustomerLoanEMI_CustomerLoanDetails">
+      <End Role="CustomerLoanDetails" EntitySet="CustomerLoanDetails" />
+      <End Role="CustomerLoanEMI" EntitySet="CustomerLoanEMIs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Districts_State" Association="Self.FK_Districts_State">
+      <End Role="State" EntitySet="States" />
+      <End Role="Districts" EntitySet="Districts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LedgerStatus_FinancialYear" Association="Self.FK_LedgerStatus_FinancialYear">
+      <End Role="FinancialYear" EntitySet="FinancialYears" />
+      <End Role="LedgersStatus" EntitySet="LedgersStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LedgerBankDetails_Ledgers" Association="Self.FK_LedgerBankDetails_Ledgers">
+      <End Role="Ledgers" EntitySet="Ledgers" />
+      <End Role="LedgerBankDetails" EntitySet="LedgerBankDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LedgerStatus_Ledgers" Association="Self.FK_LedgerStatus_Ledgers">
+      <End Role="Ledgers" EntitySet="Ledgers" />
+      <End Role="LedgersStatus" EntitySet="LedgersStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoanSubType_LoanType" Association="Self.FK_LoanSubType_LoanType">
+      <End Role="LoanType" EntitySet="LoanTypes" />
+      <End Role="LoanSubType" EntitySet="LoanSubTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SocietyLoanEMI_SocietyLoanEMI" Association="Self.FK_SocietyLoanEMI_SocietyLoanEMI">
+      <End Role="SocietyLoanDetails" EntitySet="SocietyLoanDetails" />
+      <End Role="SocietyLoanEMI" EntitySet="SocietyLoanEMIs" />
+    </AssociationSet>
+    <EntitySet Name="DecimalPointTools" EntityType="CoOperativeModel.DecimalPointTool" />
+  </EntityContainer>
+  <EntityType Name="DecimalPointTool">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DecimalPointNo" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>

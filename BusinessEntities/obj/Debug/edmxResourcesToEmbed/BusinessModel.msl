@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CoOperativeModelStoreContainer" CdmEntityContainer="CoOperativeEntities1">
+    <EntitySetMapping Name="Banks">
+      <EntityTypeMapping TypeName="CoOperativeModel.Bank">
+        <MappingFragment StoreEntitySet="Bank">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerAddressDetails">
+      <EntityTypeMapping TypeName="CoOperativeModel.CustomerAddressDetail">
+        <MappingFragment StoreEntitySet="CustomerAddressDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="PrVill" ColumnName="PrVill" />
+          <ScalarProperty Name="PrPS" ColumnName="PrPS" />
+          <ScalarProperty Name="PrPIN" ColumnName="PrPIN" />
+          <ScalarProperty Name="prDist" ColumnName="prDist" />
+          <ScalarProperty Name="pmVill" ColumnName="pmVill" />
+          <ScalarProperty Name="pmPS" ColumnName="pmPS" />
+          <ScalarProperty Name="pmPIN" ColumnName="pmPIN" />
+          <ScalarProperty Name="pmDist" ColumnName="pmDist" />
+          <ScalarProperty Name="mNo" ColumnName="mNo" />
+          <ScalarProperty Name="lNo" ColumnName="lNo" />
+          <ScalarProperty Name="emailID" ColumnName="emailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerBankDetails">
+      <EntityTypeMapping TypeName="CoOperativeModel.CustomerBankDetail">
+        <MappingFragment StoreEntitySet="CustomerBankDetails">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="BankIFC" ColumnName="BankIFC" />
+          <ScalarProperty Name="MICRCode" ColumnName="MICRCode" />
+          <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerDetails">
+      <EntityTypeMapping TypeName="CoOperativeModel.CustomerDetail">
+        <MappingFragment StoreEntitySet="CustomerDetails">
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="Customername" ColumnName="Customername" />
+          <ScalarProperty Name="PanNo" ColumnName="PanNo" />
+          <ScalarProperty Name="AadhaarNo" ColumnName="AadhaarNo" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="LedgerId" ColumnName="LedgerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerLoanDetails">
+      <EntityTypeMapping TypeName="CoOperativeModel.CustomerLoanDetail">
+        <MappingFragment StoreEntitySet="CustomerLoanDetails">
+          <ScalarProperty Name="LoanId" ColumnName="LoanId" />
+          <ScalarProperty Name="SocietyLoanSlNo" ColumnName="SocietyLoanSlNo" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="SanctionedAmount" ColumnName="SanctionedAmount" />
+          <ScalarProperty Name="RateOfInterest" ColumnName="RateOfInterest" />
+          <ScalarProperty Name="EMIPrincipalAmount" ColumnName="EMIPrincipalAmount" />
+          <ScalarProperty Name="EMIInterestAmount" ColumnName="EMIInterestAmount" />
+          <ScalarProperty Name="ShareAmount" ColumnName="ShareAmount" />
+          <ScalarProperty Name="ROIShare" ColumnName="ROIShare" />
+          <ScalarProperty Name="InsuranceAmount" ColumnName="InsuranceAmount" />
+          <ScalarProperty Name="PaidInsuranceFromSociety" ColumnName="PaidInsuranceFromSociety" />
+          <ScalarProperty Name="PayableAmount" ColumnName="PayableAmount" />
+          <ScalarProperty Name="NoOfEMI" ColumnName="NoOfEMI" />
+          <ScalarProperty Name="LoanTypeName" ColumnName="LoanTypeName" />
+          <ScalarProperty Name="LoanSubTypeName" ColumnName="LoanSubTypeName" />
+          <ScalarProperty Name="EMIPeriodFormate" ColumnName="EMIPeriodFormate" />
+          <ScalarProperty Name="EMIPeriod" ColumnName="EMIPeriod" />
+          <ScalarProperty Name="EMIPaidDay" ColumnName="EMIPaidDay" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="IsCompoundInterest" ColumnName="IsCompoundInterest" />
+          <ScalarProperty Name="Transection_Ref_No" ColumnName="Transection_Ref_No" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerLoanEMIs">
+      <EntityTypeMapping TypeName="CoOperativeModel.CustomerLoanEMI">
+        <MappingFragment StoreEntitySet="CustomerLoanEMI">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LoanId" ColumnName="LoanId" />
+          <ScalarProperty Name="NoOfEMI" ColumnName="NoOfEMI" />
+          <ScalarProperty Name="EMIDate" ColumnName="EMIDate" />
+          <ScalarProperty Name="PrincipalAmount" ColumnName="PrincipalAmount" />
+          <ScalarProperty Name="InterestAmount" ColumnName="InterestAmount" />
+          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+          <ScalarProperty Name="VoucherNo" ColumnName="VoucherNo" />
+          <ScalarProperty Name="PaidDate" ColumnName="PaidDate" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Transection_Ref_No" ColumnName="Transection_Ref_No" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Districts">
+      <EntityTypeMapping TypeName="CoOperativeModel.District">
+        <MappingFragment StoreEntitySet="Districts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DistName" ColumnName="DistName" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FinancialYears">
+      <EntityTypeMapping TypeName="CoOperativeModel.FinancialYear">
+        <MappingFragment StoreEntitySet="FinancialYear">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FinancialYearName" ColumnName="FinancialYearName" />
+          <ScalarProperty Name="StartingDate" ColumnName="StartingDate" />
+          <ScalarProperty Name="EndingDate" ColumnName="EndingDate" />
+          <ScalarProperty Name="IsCurentyear" ColumnName="IsCurentyear" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LedgerBankDetails">
+      <EntityTypeMapping TypeName="CoOperativeModel.LedgerBankDetail">
+        <MappingFragment StoreEntitySet="LedgerBankDetails">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LedgerID" ColumnName="LedgerID" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="ACNo" ColumnName="ACNo" />
+          <ScalarProperty Name="IFSC" ColumnName="IFSC" />
+          <ScalarProperty Name="MICR" ColumnName="MICR" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ACType" ColumnName="ACType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ledgers">
+      <EntityTypeMapping TypeName="CoOperativeModel.Ledger">
+        <MappingFragment StoreEntitySet="Ledgers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LedgerId" ColumnName="LedgerId" />
+          <ScalarProperty Name="LedgerName" ColumnName="LedgerName" />
+          <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="SubAccount" ColumnName="SubAccount" />
+          <ScalarProperty Name="ParentLedgerId" ColumnName="ParentLedgerId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="IsFixed" ColumnName="IsFixed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LedgersStatus">
+      <EntityTypeMapping TypeName="CoOperativeModel.LedgersStatu">
+        <MappingFragment StoreEntitySet="LedgersStatus">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LedgerID" ColumnName="LedgerID" />
+          <ScalarProperty Name="FinYearID" ColumnName="FinYearID" />
+          <ScalarProperty Name="OpeningBalance" ColumnName="OpeningBalance" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LedgerSubAccounts">
+      <EntityTypeMapping TypeName="CoOperativeModel.LedgerSubAccount">
+        <MappingFragment StoreEntitySet="LedgerSubAccount">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="ParentAccount" ColumnName="ParentAccount" />
+          <ScalarProperty Name="Nature" ColumnName="Nature" />
+          <ScalarProperty Name="IsFixed" ColumnName="IsFixed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoanSubTypes">
+      <EntityTypeMapping TypeName="CoOperativeModel.LoanSubType">
+        <MappingFragment StoreEntitySet="LoanSubType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SubTypeName" ColumnName="SubTypeName" />
+          <ScalarProperty Name="LoanTypeId" ColumnName="LoanTypeId" />
+          <ScalarProperty Name="MaxLoanAmount" ColumnName="MaxLoanAmount" />
+          <ScalarProperty Name="MinLoanAmount" ColumnName="MinLoanAmount" />
+          <ScalarProperty Name="EMIPeriodFormate" ColumnName="EMIPeriodFormate" />
+          <ScalarProperty Name="EMIPeriod" ColumnName="EMIPeriod" />
+          <ScalarProperty Name="IsCompoundInterest" ColumnName="IsCompoundInterest" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoanTypes">
+      <EntityTypeMapping TypeName="CoOperativeModel.LoanType">
+        <MappingFragment StoreEntitySet="LoanType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LoanTypeName" ColumnName="LoanTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROIofBanks">
+      <EntityTypeMapping TypeName="CoOperativeModel.ROIofBank">
+        <MappingFragment StoreEntitySet="ROIofBank">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RateOfLoan" ColumnName="RateOfLoan" />
+          <ScalarProperty Name="RateOfShareDeposit" ColumnName="RateOfShareDeposit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SocietyDetails">
+      <EntityTypeMapping TypeName="CoOperativeModel.SocietyDetail">
+        <MappingFragment StoreEntitySet="SocietyDetails">
+          <ScalarProperty Name="SocietyName" ColumnName="SocietyName" />
+          <ScalarProperty Name="At" ColumnName="At" />
+          <ScalarProperty Name="PO" ColumnName="PO" />
+          <ScalarProperty Name="Block" ColumnName="Block" />
+          <ScalarProperty Name="SubDivission" ColumnName="SubDivission" />
+          <ScalarProperty Name="PS" ColumnName="PS" />
+          <ScalarProperty Name="DIST" ColumnName="DIST" />
+          <ScalarProperty Name="PIN" ColumnName="PIN" />
+          <ScalarProperty Name="ESTD" ColumnName="ESTD" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Ph" ColumnName="Ph" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="GP" ColumnName="GP" />
+          <ScalarProperty Name="CentreCode" ColumnName="CentreCode" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="DistrictCode" ColumnName="DistrictCode" />
+          <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+          <ScalarProperty Name="GSTNo" ColumnName="GSTNo" />
+          <ScalarProperty Name="PanNo" ColumnName="PanNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SocietyLoanDetails">
+      <EntityTypeMapping TypeName="CoOperativeModel.SocietyLoanDetail">
+        <MappingFragment StoreEntitySet="SocietyLoanDetails">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="SocietyLoanSlNo" ColumnName="SocietyLoanSlNo" />
+          <ScalarProperty Name="SanctionedAmount" ColumnName="SanctionedAmount" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="RateOfInterest" ColumnName="RateOfInterest" />
+          <ScalarProperty Name="EMIPrincipalAmount" ColumnName="EMIPrincipalAmount" />
+          <ScalarProperty Name="EMIInterestAmount" ColumnName="EMIInterestAmount" />
+          <ScalarProperty Name="PayableAmount" ColumnName="PayableAmount" />
+          <ScalarProperty Name="NoOfEMI" ColumnName="NoOfEMI" />
+          <ScalarProperty Name="LoanTypeName" ColumnName="LoanTypeName" />
+          <ScalarProperty Name="LoanSubTypeName" ColumnName="LoanSubTypeName" />
+          <ScalarProperty Name="EMIPeriodFormate" ColumnName="EMIPeriodFormate" />
+          <ScalarProperty Name="EMIPeriod" ColumnName="EMIPeriod" />
+          <ScalarProperty Name="EMIPaidDay" ColumnName="EMIPaidDay" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="IsCompoundInterest" ColumnName="IsCompoundInterest" />
+          <ScalarProperty Name="LedgerFrom" ColumnName="LedgerFrom" />
+          <ScalarProperty Name="LedgerTo" ColumnName="LedgerTo" />
+          <ScalarProperty Name="Transection_Ref_No" ColumnName="Transection_Ref_No" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SocietyLoanEMIs">
+      <EntityTypeMapping TypeName="CoOperativeModel.SocietyLoanEMI">
+        <MappingFragment StoreEntitySet="SocietyLoanEMI">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SocietyLoanSlNo" ColumnName="SocietyLoanSlNo" />
+          <ScalarProperty Name="NoOfEMI" ColumnName="NoOfEMI" />
+          <ScalarProperty Name="EMIDate" ColumnName="EMIDate" />
+          <ScalarProperty Name="PrincipalAmount" ColumnName="PrincipalAmount" />
+          <ScalarProperty Name="InterestAmount" ColumnName="InterestAmount" />
+          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+          <ScalarProperty Name="VoucherNo" ColumnName="VoucherNo" />
+          <ScalarProperty Name="PaidDate" ColumnName="PaidDate" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Transection_Ref_No" ColumnName="Transection_Ref_No" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="CoOperativeModel.State">
+        <MappingFragment StoreEntitySet="State">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="State1" ColumnName="State" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transections">
+      <EntityTypeMapping TypeName="CoOperativeModel.Transection">
+        <MappingFragment StoreEntitySet="Transection">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="TransectionID" ColumnName="TransectionID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="TransectionType" ColumnName="TransectionType" />
+          <ScalarProperty Name="LedgerIdFrom" ColumnName="LedgerIdFrom" />
+          <ScalarProperty Name="LedgerIdTo" ColumnName="LedgerIdTo" />
+          <ScalarProperty Name="Amount_Dr" ColumnName="Amount_Dr" />
+          <ScalarProperty Name="Amount_Cr" ColumnName="Amount_Cr" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+          <ScalarProperty Name="ChequeDate" ColumnName="ChequeDate" />
+          <ScalarProperty Name="Narration" ColumnName="Narration" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Transection_Ref_No" ColumnName="Transection_Ref_No" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerLists">
+      <EntityTypeMapping TypeName="CoOperativeModel.CustomerList">
+        <MappingFragment StoreEntitySet="CustomerList">
+          <ScalarProperty Name="LedgerName" ColumnName="LedgerName" />
+          <ScalarProperty Name="Customername" ColumnName="Customername" />
+          <ScalarProperty Name="PanNo" ColumnName="PanNo" />
+          <ScalarProperty Name="AadhaarNo" ColumnName="AadhaarNo" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="LedgerId" ColumnName="LedgerId" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="BankIFC" ColumnName="BankIFC" />
+          <ScalarProperty Name="MICRCode" ColumnName="MICRCode" />
+          <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="PrVill" ColumnName="PrVill" />
+          <ScalarProperty Name="PrPS" ColumnName="PrPS" />
+          <ScalarProperty Name="PrPIN" ColumnName="PrPIN" />
+          <ScalarProperty Name="prDist" ColumnName="prDist" />
+          <ScalarProperty Name="pmVill" ColumnName="pmVill" />
+          <ScalarProperty Name="pmPS" ColumnName="pmPS" />
+          <ScalarProperty Name="pmPIN" ColumnName="pmPIN" />
+          <ScalarProperty Name="pmDist" ColumnName="pmDist" />
+          <ScalarProperty Name="mNo" ColumnName="mNo" />
+          <ScalarProperty Name="lNo" ColumnName="lNo" />
+          <ScalarProperty Name="emailID" ColumnName="emailID" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransectionViews">
+      <EntityTypeMapping TypeName="CoOperativeModel.TransectionView">
+        <MappingFragment StoreEntitySet="TransectionView">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="TransectionID" ColumnName="TransectionID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="TransectionType" ColumnName="TransectionType" />
+          <ScalarProperty Name="Amount_Dr" ColumnName="Amount_Dr" />
+          <ScalarProperty Name="Amount_Cr" ColumnName="Amount_Cr" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+          <ScalarProperty Name="ChequeDate" ColumnName="ChequeDate" />
+          <ScalarProperty Name="Narration" ColumnName="Narration" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Transection_Ref_No" ColumnName="Transection_Ref_No" />
+          <ScalarProperty Name="LedgerIdFrom" ColumnName="LedgerIdFrom" />
+          <ScalarProperty Name="LedgerName_From" ColumnName="LedgerName_From" />
+          <ScalarProperty Name="LedgerIdTo" ColumnName="LedgerIdTo" />
+          <ScalarProperty Name="LedgerName_To" ColumnName="LedgerName_To" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DecimalPointTools">
+      <EntityTypeMapping TypeName="CoOperativeModel.DecimalPointTool">
+        <MappingFragment StoreEntitySet="DecimalPointTools">
+          <ScalarProperty Name="DecimalPointNo" ColumnName="DecimalPointNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

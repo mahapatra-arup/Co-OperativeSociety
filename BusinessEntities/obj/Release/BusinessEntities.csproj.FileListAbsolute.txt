@@ -1,0 +1,12 @@
+D:\A (Project)\Co-OperativeSociety\CoOperativeSociety\BusinessEntities\bin\Release\BusinessEntities.dll.config
+D:\A (Project)\Co-OperativeSociety\CoOperativeSociety\BusinessEntities\bin\Release\BusinessEntities.dll
+D:\A (Project)\Co-OperativeSociety\CoOperativeSociety\BusinessEntities\bin\Release\BusinessEntities.pdb
+D:\A (Project)\Co-OperativeSociety\CoOperativeSociety\BusinessEntities\bin\Release\EntityFramework.dll
+D:\A (Project)\Co-OperativeSociety\CoOperativeSociety\BusinessEntities\bin\Release\EntityFramework.SqlServer.dll
+D:\A (Project)\Co-OperativeSociety\CoOperativeSociety\BusinessEntities\bin\Release\EntityFramework.xml
+D:\A (Project)\Co-OperativeSociety\CoOperativeSociety\BusinessEntities\bin\Release\EntityFramework.SqlServer.xml
+D:\A (Project)\Co-OperativeSociety\CoOperativeSociety\BusinessEntities\obj\Release\BusinessEntities.csproj.CoreCompileInputs.cache
+D:\A (Project)\Co-OperativeSociety\CoOperativeSociety\BusinessEntities\obj\Release\BusinessEntities.csproj.CopyComplete
+D:\A (Project)\Co-OperativeSociety\CoOperativeSociety\BusinessEntities\obj\Release\BusinessEntities.dll
+D:\A (Project)\Co-OperativeSociety\CoOperativeSociety\BusinessEntities\obj\Release\BusinessEntities.pdb
+D:\A (Project)\Co-OperativeSociety\CoOperativeSociety\BusinessEntities\obj\Release\BusinessEntities.csprojAssemblyReference.cache
